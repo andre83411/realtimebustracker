@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>Map Tracker</title>
+<meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
+<script src="https://api.mapbox.com/mapbox-gl-js/v1.11.0/mapbox-gl.js"></script>
+<link href="https://api.mapbox.com/mapbox-gl-js/v1.11.0/mapbox-gl.css" rel="stylesheet" />
+<script src="mapanimation.js"></script>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="map"></div>
+<script>
+
+mapboxgl.accessToken ='pk.eyJ1IjoiYW5kcmVhbW9udGVzIiwiYSI6ImNsYmR4ZXFyajA1bjUzdm80bjlxcnFpcXAifQ.eUe07__bsCwv2mzjfl5ioA';
+
+
+     const map= new mapboxgl.Map({
+        container: 'map',
+        style: 'mapbox://styles/mapbox/streets-v11',
+        center: [-78.838009, 35.874507],
+        zoom: 15
+    })
+
+
+
+    const geojson = {
+  type: 'FeatureCollection',
+  features: [
+    {
+      type: 'Feature',
+      geometry: {
+        type: 'Point',
+        coordinates: [-78.838009, 35.874507]
+      },
+      properties: {
+        title: 'Mapbox',
+        description: 'Regtional Transit'
+      },
+      id:'route'
+    }
+    
+  ]
+};
+
+function addMarker(){
+for (const feature of geojson.features) {
+
+  const el = document.createElement('div');
+  el.className = 'marker';
+
+  new mapboxgl.Marker(el).setLngLat(feature.geometry.coordinates).addTo(map);
+}
+}
+
+addMarker();
+
+
+
+
+
+ 
+      
+</script>
+</body>
+</html>
