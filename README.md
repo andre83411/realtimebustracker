@@ -1,8 +1,8 @@
-### REAL TIME BUS TRACKER
+# REAL TIME BUS TRACKER
 #
-# This project tracks one vehicle within the public transportation system in Durham, North Carolina.
-# To use this tool, download all files in this repository and open HTML file in your browser.
-# Upcoming improvements will tie the bus icon to the coordinates in the live data transportation API. 
+### This project tracks one vehicle within the public transportation system in Durham, North Carolina.
+### To use this tool, download all files in this repository and open HTML file in your browser.
+### Upcoming improvements will tie the bus icon to the coordinates in the live data transportation API. 
 
 
 License information: 
